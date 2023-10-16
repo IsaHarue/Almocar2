@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Almocar2.props" />
+</Project>
