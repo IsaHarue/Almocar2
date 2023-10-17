@@ -1,10 +1,12 @@
 using Almocar2.Models;
 using Almocar2.Repositories.Interfaces;
 using Almocar2.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Almocar2.Controllers
 {
+    [Authorize]
     public class CarrinhoController : Controller
     {
         private readonly Carrinho _carrinho;

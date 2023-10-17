@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 using Almocar2.Context;
 using Almocar2.Models;
 
 namespace Almocar2.Areas.Admin.Controllers
 {
+    [Authorize(Roles="Admin")]
     [Area("Admin")]
     public class AdminCategoriaController : Controller
     {

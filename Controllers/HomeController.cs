@@ -3,34 +3,37 @@ using Microsoft.AspNetCore.Mvc;
 using Almocar2.Models;
 using Almocar2.Repositories.Interfaces;
 using Almocar2.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
-namespace Almocar2.Controllers;
-
-public class HomeController : Controller
+namespace Almocar2.Controllers
 {
-   private readonly IItemRepository _itemRepository;
-
-    public HomeController(IItemRepository itemRepository)
+    public class HomeController : Controller
     {
-        _itemRepository = itemRepository;
-    }
+        private readonly IItemRepository _itemRepository;
 
-    public IActionResult Index()
-    {
-        var homeViewModel = new HomeViewModel{
-            ItensEmDestaque = _itemRepository.ItensEmDestaque
-        };
-        return View(homeViewModel);
-    }
+        public HomeController(IItemRepository itemRepository)
+        {
+            _itemRepository = itemRepository;
+        }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
+        public IActionResult Index()
+        {
+            var homeViewModel = new HomeViewModel
+            {
+                ItensEmDestaque = _itemRepository.ItensEmDestaque
+            };
+            return View(homeViewModel);
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }
