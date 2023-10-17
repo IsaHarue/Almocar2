@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Almocar2.Context;
 using Almocar2.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Almocar2.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class AdminItemController : Controller
     {
@@ -156,14 +158,14 @@ namespace Almocar2.Areas.Admin.Controllers
             {
                 _context.Itens.Remove(item);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ItemExists(int id)
         {
-          return _context.Itens.Any(e => e.ItemId == id);
+            return _context.Itens.Any(e => e.ItemId == id);
         }
     }
 }

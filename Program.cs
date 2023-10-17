@@ -2,17 +2,22 @@ using Almocar2.Context;
 using Almocar2.Models;
 using Almocar2.Repositories;
 using Almocar2.Repositories.Interfaces;
+using Almocar2.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IUserRoleInicial, UserRoleInicial>();
+builder.Services.AddIdentity<UserAcount, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped(sp => Carrinho.GetCarrinhoCompra(sp));
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
-builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddTransient<ICategoriaRepository, CategoriaRepository>();
 builder.Services.AddTransient<IItemRepository, ItemRepository>();
+builder.Services.AddTransient<IPedidoRepository, PedidoRepository>();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("DefaulConnection")));
 builder.Services.AddControllersWithViews();
 
@@ -30,9 +35,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+CriarPerfisUsuarios(app);
 app.UseSession();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -50,3 +56,12 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+static void CriarPerfisUsuarios(WebApplication app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+    using var scope = scopedFactory?.CreateScope();
+    var service = scope?.ServiceProvider.GetService<IUserRoleInicial>();
+    service?.SeedRoles();
+    service?.SeedUsers();
+}
