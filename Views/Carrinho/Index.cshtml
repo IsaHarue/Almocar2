@@ -1,10 +1,11 @@
 @model CarrinhoViewModel
 <div class="Container">
     <div class="row checkoutForm">
-        <div>
-            <img src="~/images/Full-Cart-icon.png" width="30" height="35" />
+        <div class="hstack">
+            <i class="bi bi-cart-check-fill text-dark fs-1"></i>
             <h4>Seu carrinho de
                 compras : </h4>
+            
         </div>
         <table class="table table-bordered table-striped">
             <thead>
@@ -28,7 +29,7 @@
                         </td>
                         <td class="text-center">
                             <a asp-controller="Carrinho" asp-action="RemoverCarrinho" asp-route-itemId="@item.Item.ItemId">
-                                <img src="~/images/remover.png" width="20px" height="20px" />
+                               <i class="bi bi-trash3-fill text-dark"></i>
                             </a>
                         </td>
                     </tr>
@@ -46,11 +47,11 @@
 
         <div class="text-right">
             <div class="btn-group">
-                <a class="btn btn-success" asp-controller="Pedido" asp-action="Checkout">Encerrar
+                <a class="btn btn-danger" asp-controller="Pedido" asp-action="Checkout">Encerrar
                     Pedido</a>
 
                 &nbsp;&nbsp;&nbsp;
-                <a class="btn btn-primary" asp-controller="Item" asp-action="List">Continuar
+                <a class="btn btn-success" asp-controller="Item" asp-action="List">Continuar
                     Comprando</a>
             </div>
         </div>

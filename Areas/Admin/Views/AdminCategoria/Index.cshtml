@@ -7,7 +7,7 @@
 <h1>Categoria</h1>
 
 <p>
-    <a asp-action="Create">Criar novo</a>
+    <a asp-action="Create" class="link-danger">Criar novo</a>
 </p>
 <table class="table">
     <thead>
@@ -25,9 +25,9 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoriaId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoriaId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoriaId">Deletar</a>
+                <a asp-action="Edit" asp-route-id="@item.CategoriaId "class="link-danger">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.CategoriaId"class="link-danger">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.CategoriaId"class="link-danger">Deletar</a>
             </td>
         </tr>
 }

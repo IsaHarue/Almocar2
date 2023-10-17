@@ -8,7 +8,7 @@
 
 <h4>Item</h4>
 <hr />
-<div class="row">
+<div class="row  d-flex justify-content-center">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -58,16 +58,14 @@
                 <select asp-for="CategoriaId" class="form-control" asp-items="ViewBag.CategoriaId"></select>
                 <span asp-validation-for="CategoriaId" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Salvar" class="btn btn-primary" />
-                 <a asp-action="Index">Voltar para a lista</a>
+            <div class="form-group d-flex justify-content-center mt-3">
+                <input type="submit" value="Salvar" class="btn btn-danger col-3" />
+                 <a asp-action="Index" class="link-danger">Voltar para a lista</a>
             </div>
-            
         </form>
             <hr>
     </div>
 </div>
-
 
 
 

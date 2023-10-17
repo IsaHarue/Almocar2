@@ -1,37 +1,37 @@
 @model LoginViewModel
 <table class="table">
     <tr>
-        <td><img src="~/images/login1.jpg" class="img-fluid" asp-append-version="true" alt="Fazer o Login" /></td>
-        <td>
-            <div class="row">
-                <div class="col-9 col-md-9 col-lg-9">
+        
+        
+            <div class="row d-flex justify-content-center">
+                <div class="col-6 col-md-6 col-lg-6 ">
                     <h4>Login</h4>
                     <form asp-controller="Account" asp-action="Login" method="post" class="form-horizontal" role="form">
                         <hr />
                         <div asp-validation-summary="All" class="text-danger"></div>
                         <input type="hidden" asp-for="ReturnUrl" />
                         <div class="form-group">
-                            <label asp-for="UserName" class="col-md-2 control-label"></label>
-                            <div class="col-md-6">
+                            <label asp-for="UserName" class="control-label"></label>
+                            <div class="">
                                 <input asp-for="UserName" class="form-control" />
                                 <span asp-validation-for="UserName" class="text-danger"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label asp-for="Password" class="col-md-2 control-label"></label>
-                            <div class="col-md-6">
+                            <label asp-for="Password" class=" control-label"></label>
+                            <div class="">
                                 <input asp-for="Password" class="form-control" />
                                 <span asp-validation-for="Password" class="text-danger"></span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-8 mt-2">
-                                <input type="submit" class="btn btn-success" value="Log in" />
+                        <div class="form-group mt-2">
+                            <div class="d-flex justify-content-center">
+                                <input type="submit" class="btn btn-danger p-0 col-3 rounded-pill fs-5" value="Logar"/>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </td>
+       
     </tr>
 </table>

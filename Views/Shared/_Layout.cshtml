@@ -16,20 +16,22 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand " asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/Logo.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon "></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between ">
+                    <ul class="navbar-nav flex-grow-1 text-white">
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Admin" asp-controller="Admin"
-                                asp-action="Index">Admin</a>
+                        <li class="nav-item ">
+                             @if (User.IsInRole("Admin"))
+                            {
+                                <a class="nav-link text-white" asp-area="Admin" asp-controller="Admin" asp-action="Index">Admin</a>
+                            }
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
 
                             @await Component.InvokeAsync("CategoriaMenu")
 
@@ -37,9 +39,9 @@
                         <li>
                             @await Component.InvokeAsync("CarrinhoResumo")
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item ">
 
-                            <form class="navbar-form navbar-right" asp-controller="Item" asp-action="Search"
+                            <form class="navbar-form navbar-right text-white" asp-controller="Item" asp-action="Search"
                                 method="get">
 
                                 <div class="form-group">
@@ -48,7 +50,7 @@
                                 </div>
                             </form>
                         </li>
-                        <li>
+                        <li class="text-white">
                             @await Html.PartialAsync("_Login")
                         </li>
                     </ul>
@@ -63,8 +65,8 @@
     </div>
 
     <footer class="border-top footer bg-black">
-        <div class="container col-2 text-center">
-            <a href="">Acesse com midias sociais</a>
+        <div class="container col-2 text-center ">
+            <a class=" text-white">Acesse com midias sociais</a>
             <div class="icones fs-2 text-white">
                     <i class="bi bi-facebook "></i>
                     <i class="bi bi-instagram"></i>
