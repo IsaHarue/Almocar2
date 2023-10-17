@@ -13,6 +13,30 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hamburguer.png",
+      "PackagePath": "staticwebassets\\img\\Hamburguer.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hot dog.png",
+      "PackagePath": "staticwebassets\\img\\Hot dog.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Logo.png",
+      "PackagePath": "staticwebassets\\img\\Logo.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\imagem1.png",
+      "PackagePath": "staticwebassets\\img\\imagem1.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\imagem2.png",
+      "PackagePath": "staticwebassets\\img\\imagem2.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\imagem3.png",
+      "PackagePath": "staticwebassets\\img\\imagem3.png"
+    },
+    {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,15 +1,17 @@
-<div class="col-sm-4 col-md-4 col-lg-4">
-    <p><img src="@Model.ImagemPequenaUrl" class="img-fluid" asp-append-version="true"></p>
-    <h3>Preço : @Model.Preco.ToString("c")</h3>
-    <h4>
-        <a asp-controller="Item" asp-action="Details" asp-route-itemId="@Model.ItemId">@Model.Nome</a>
-    </h4>
+<div class="col-sm-12 col-md-12 col-lg-12 ">
+    <div class="d-flex justify-content-start align-items-center w-100">
+    <p><img src="@Model.ImagemPequenaUrl" class="img-fluid" asp-append-version="true"></p>  <h4><a asp-controller="Item" asp-action="Details" asp-route-itemId="@Model.ItemId">@Model.Nome</a></h4>
     <p>@Model.DescricaoCurta</p>
-    <div>
+    </div>
+    
+    <div class="d-flex justify-content-end ">
+        <h3 class="text-danger">@Model.Preco.ToString("c")</h3>
         <p class="button">
-            <a class="btn btn-primary" id="cartButton" asp-controller="Carrinho" asp-action="AdicionarItemNoCarrinhoCompra" asp-route-itemId="@Model.ItemId">
-                Incluir no Carrinho
+            <a class="btn btn-danger" id="cartButton" asp-controller="Carrinho" asp-action="AdicionarItemNoCarrinhoCompra" asp-route-itemId="@Model.ItemId">
+                <i class="bi bi-cart-plus-fill"></i> Adicionar
             </a>
         </p>
     </div>
 </div>
+
+
