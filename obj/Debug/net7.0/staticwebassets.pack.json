@@ -13,44 +13,60 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Finger food.png",
+      "PackagePath": "staticwebassets\\img\\Finger food.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\French fries.png",
+      "PackagePath": "staticwebassets\\img\\French fries.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Fried chicken.png",
+      "PackagePath": "staticwebassets\\img\\Fried chicken.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Group 8.png",
+      "PackagePath": "staticwebassets\\img\\Group 8.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Group 9.png",
+      "PackagePath": "staticwebassets\\img\\Group 9.png"
+    },
+    {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hamburguer(1).png",
       "PackagePath": "staticwebassets\\img\\Hamburguer(1).png"
-    },
-    {
-      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hamburguer.png",
-      "PackagePath": "staticwebassets\\img\\Hamburguer.png"
-    },
-    {
-      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hot dog(1).png",
-      "PackagePath": "staticwebassets\\img\\Hot dog(1).png"
     },
     {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hot dog(2).png",
       "PackagePath": "staticwebassets\\img\\Hot dog(2).png"
     },
     {
-      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hot dog(3).png",
-      "PackagePath": "staticwebassets\\img\\Hot dog(3).png"
-    },
-    {
-      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Hot dog.png",
-      "PackagePath": "staticwebassets\\img\\Hot dog.png"
-    },
-    {
-      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Logo (1).png",
-      "PackagePath": "staticwebassets\\img\\Logo (1).png"
-    },
-    {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Logo.png",
       "PackagePath": "staticwebassets\\img\\Logo.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Pepsi.png",
+      "PackagePath": "staticwebassets\\img\\Pepsi.png"
     },
     {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Sandwich.png",
       "PackagePath": "staticwebassets\\img\\Sandwich.png"
     },
     {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\Sausages.png",
+      "PackagePath": "staticwebassets\\img\\Sausages.png"
+    },
+    {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\coca-cola.png",
       "PackagePath": "staticwebassets\\img\\coca-cola.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\guaranazin.png",
+      "PackagePath": "staticwebassets\\img\\guaranazin.png"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\image 2 (1).png",
+      "PackagePath": "staticwebassets\\img\\image 2 (1).png"
     },
     {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\img\\imagem1.png",

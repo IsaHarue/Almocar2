@@ -73,9 +73,9 @@
                 @Html.DisplayFor(modelItem => item.Categoria.CategoriaId)
             </td>
             <td class="row">
-                <a asp-action="Edit" asp-route-id="@item.ItemId"class="link-danger">Editar</a>
-                <a asp-action="Details" asp-route-id="@item.ItemId"class="link-danger">Detalhes</a>
-                <a asp-action="Delete" asp-route-id="@item.ItemId"class="link-danger">Deletar</a>
+                <a asp-action="Edit" asp-route-id="@item.ItemId"class="link-danger text-decoration-none">Editar</a>
+                <a asp-action="Details" asp-route-id="@item.ItemId"class="link-danger text-decoration-none">Detalhes</a>
+                <a asp-action="Delete" asp-route-id="@item.ItemId"class="link-danger text-decoration-none">Deletar</a>
             </td>
         </tr>
 }
