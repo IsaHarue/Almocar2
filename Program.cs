@@ -1,3 +1,4 @@
+using Almocar2.Areas.Admin.Services;
 using Almocar2.Context;
 using Almocar2.Models;
 using Almocar2.Repositories;
@@ -5,10 +6,20 @@ using Almocar2.Repositories.Interfaces;
 using Almocar2.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using ReflectionIT.Mvc.Paging;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddPaging(options => {
+options.ViewName = "Bootstrap5";
+options.PageParameterName = "pageindex";
+});
+
+
+builder.Services.AddScoped<RelatorioVendasServices>();
+builder.Services.Configure<ConfiguraImagem>(builder.Configuration.GetSection("ConfImagemItem"));
 builder.Services.AddScoped<IUserRoleInicial, UserRoleInicial>();
 builder.Services.AddIdentity<UserAcount, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped(sp => Carrinho.GetCarrinhoCompra(sp));

@@ -8,10 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Almocar2.Context;
 using Almocar2.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace Almocar2.Areas.Admin.Controllers
 {
-    [Authorize(Roles="Admin")]
+    [Authorize(Roles = "Admin")]
     [Area("Admin")]
     public class AdminCategoriaController : Controller
     {
@@ -23,9 +24,21 @@ namespace Almocar2.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminCategoria
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filtro, int pageindex = 1,
+        string sort = "Nome")
         {
-              return View(await _context.Categorias.ToListAsync());
+            var moveislist =_context.Categorias.AsNoTracking().AsQueryable();
+
+            if (filtro != null)
+            {
+                moveislist = moveislist.Where(p =>p.Nome.Contains(filtro));
+
+            }
+            var model = await PagingList.CreateAsync(moveislist, 5, pageindex, sort, "Nome");
+
+            model.RouteValue = new RouteValueDictionary{{"filtro", filtro}};
+
+            return View(model);
         }
 
         // GET: Admin/AdminCategoria/Details/5
@@ -151,14 +164,26 @@ namespace Almocar2.Areas.Admin.Controllers
             {
                 _context.Categorias.Remove(categoria);
             }
-            
-            await _context.SaveChangesAsync();
+
+            try
+            {
+                _context.Categorias.Remove(categoria);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException ex)
+            {
+                if (ex.InnerException.ToString().Contains("FOREIGN KEY"))
+                {
+                    ViewData["Erro"] = "não é possível deletar essa categoria porque ele está em execução";
+                    return View();
+                }
+            }
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoriaExists(int id)
         {
-          return _context.Categorias.Any(e => e.CategoriaId == id);
+            return _context.Categorias.Any(e => e.CategoriaId == id);
         }
     }
 }

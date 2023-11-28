@@ -1,8 +1,18 @@
-@model IEnumerable<Almocar2.Models.Categoria>
+@model ReflectionIT.Mvc.Paging.PagingList<Almocar2.Models.Categoria>
 
 @{
     ViewData["Title"] = "Index";
 }
+
+
+<form method="get" class="form-inline d-flex">
+    <input name="filtro" class="form-control" placeholder="filtro" value="@Model.RouteValue["Filtro"]" />
+    <button type="submit" class="btn btn-danger">Procurar</button>
+</form>
+Total de Categoria : @Model.TotalRecordCount
+<div>
+    <vc:pager paging-list="@Model"></vc:pager>
+</div>
 
 <h1>Categoria</h1>
 
@@ -19,17 +29,18 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CategoriaId "class="link-danger">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.CategoriaId"class="link-danger">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.CategoriaId"class="link-danger">Deletar</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CategoriaId " class="link-danger">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.CategoriaId" class="link-danger">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.CategoriaId" class="link-danger">Deletar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

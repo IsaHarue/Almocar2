@@ -1,10 +1,20 @@
-@model IEnumerable<Almocar2.Models.Item>
+@model ReflectionIT.Mvc.Paging.PagingList<Almocar2.Models.Item>
 
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Itens</h1>
+
+<form method="get" class="form-inline d-flex">
+    <input name="filtro" class="form-control " placeholder="filtro" value="@Model.RouteValue["Filtro"]" />
+    
+    <button type="submit" class="btn btn-danger">Procurar</button>
+</form>
+Total de Itens : @Model.TotalRecordCount
+<div>
+    <vc:pager paging-list="@Model"></vc:pager>
+</div>
 
 <p>
     <a asp-action="Create" class="link-danger">Criar novo</a>

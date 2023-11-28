@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Almocar2.bundle.scp.css"
     },
     {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\XML\\Pedido.xml",
+      "PackagePath": "staticwebassets\\XML\\Pedido.xml"
+    },
+    {
+      "Id": "C:\\dev\\Almocar2\\wwwroot\\XML\\Pedidos.xml",
+      "PackagePath": "staticwebassets\\XML\\Pedidos.xml"
+    },
+    {
       "Id": "C:\\dev\\Almocar2\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

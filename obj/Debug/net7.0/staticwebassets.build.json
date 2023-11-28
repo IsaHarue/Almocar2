@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kwotmVTH2QLAjzbPuweaCY/mDMINp9M4MOgMcLvp6Zg=",
+  "Hash": "Ed2erkbNpRwVwczs4K3gkfQ5PyZXjfhsN9RV+qQKNKw=",
   "Source": "Almocar2",
   "BasePath": "_content/Almocar2",
   "Mode": "Default",
@@ -1358,6 +1358,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\dev\\Almocar2\\wwwroot\\XML\\Pedido.xml",
+      "SourceId": "Almocar2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\Almocar2\\wwwroot\\",
+      "BasePath": "_content/Almocar2",
+      "RelativePath": "XML/Pedido.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\XML\\Pedido.xml"
+    },
+    {
+      "Identity": "C:\\dev\\Almocar2\\wwwroot\\XML\\Pedidos.xml",
+      "SourceId": "Almocar2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\dev\\Almocar2\\wwwroot\\",
+      "BasePath": "_content/Almocar2",
+      "RelativePath": "XML/Pedidos.xml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\XML\\Pedidos.xml"
     }
   ]
 }
