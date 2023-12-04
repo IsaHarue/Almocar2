@@ -20,3 +20,9 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.page-link{
+  background-color: red !important;
+  color: white !important;
+  border-color: black !important;
+}

@@ -2,7 +2,7 @@
 <h2>Pedidos Por Período</h2>
 <nav class="navbar navbar-dark">
     <div class="container-fluid">
-        <form class="navbar-form navbar-left" method="post">
+        <form class="navbar-form navbar-left" method="post" asp-action="Gerar Xml">
             <div class="form-group">
                 <div class="form-group">
                     <label for="di">Data Inicial</label>
@@ -14,13 +14,8 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-success">Filtrar</button>
-
-        </form>
-        <form asp-action="GerarXml">
-            <input type="hidden" name="di" value="@ViewData["di"]">
-            <input type="hidden" name="df" value="@ViewData["df"]">
-            <input type="submit" value="Gerar XML geral">
+            <button type="submit" class="btn btn-success">Gerar Xml</button>
+            <a asp-area="Admin" asp-controller="AdminXml" asp-action="Index">Voltar</a>
         </form>
     </div>
 </nav>
