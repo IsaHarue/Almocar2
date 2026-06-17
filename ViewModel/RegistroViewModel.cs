@@ -31,7 +31,8 @@ namespace Almocar2.ViewModel
         [Display(Name = "Estado")]
         public string Estado { get; set; }
         [Required(ErrorMessage = "O CEP deve ser informado")]
+        [RegularExpression(@"^\d{9}$", ErrorMessage = "O CEP deve ter 9 dígitos")]
         [Display(Name = "CEP")]
-        public long Cep { get; set; }
+        public string Cep { get; set; }
     }
 }

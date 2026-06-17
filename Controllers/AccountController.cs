@@ -81,7 +81,26 @@ namespace Almocar2.Controllers
                 }
                 else
                 {
-                    this.ModelState.AddModelError("Registro", "Falha ao tentar registrar o usuario");
+                    foreach (var error in result.Errors)
+                    {
+                        string mensagem = error.Description;
+                        
+                        // Traduzir mensagens de validação de senha
+                        if (mensagem.Contains("Passwords must be at least"))
+                            mensagem = "A senha deve ter no mínimo 8 caracteres.";
+                        else if (mensagem.Contains("Passwords must have at least one non alphanumeric character"))
+                            mensagem = "A senha deve conter pelo menos um caractere especial (!@#$%^&*)";
+                        else if (mensagem.Contains("Passwords must have at least one uppercase"))
+                            mensagem = "A senha deve conter pelo menos uma letra maiúscula.";
+                        else if (mensagem.Contains("Passwords must have at least one lowercase"))
+                            mensagem = "A senha deve conter pelo menos uma letra minúscula.";
+                        else if (mensagem.Contains("Passwords must have at least one digit"))
+                            mensagem = "A senha deve conter pelo menos um número.";
+                        else if (mensagem.Contains("already taken"))
+                            mensagem = "Este email já está registrado.";
+                        
+                        ModelState.AddModelError("Registro", mensagem);
+                    }
                 }
             }
             return View(registroVm);

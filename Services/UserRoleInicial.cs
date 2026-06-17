@@ -49,7 +49,7 @@ namespace Almocar2.Services
                 user.Numero = 1;
                 user.Bairro = "Bairro1";
                 user.Cidade = "Ata";
-                user.Cep = 16200000;
+                user.Cep = "16200-000";
                 IdentityResult result = _userManager.CreateAsync(user,
 
                 "Sesisenai#23").Result;

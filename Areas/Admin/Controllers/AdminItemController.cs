@@ -32,16 +32,16 @@ namespace Almocar2.Areas.Admin.Controllers
         public async Task<IActionResult> Index(string filtro, int pageindex = 1,
 string sort = "Nome")
         {
-            var moveislist =_context.Itens.AsNoTracking().AsQueryable();
+            var moveislist = _context.Itens.AsNoTracking().AsQueryable();
 
             if (filtro != null)
             {
-                moveislist = moveislist.Where(p =>p.Nome.Contains(filtro));
+                moveislist = moveislist.Where(p => p.Nome.Contains(filtro));
 
             }
             var model = await PagingList.CreateAsync(moveislist, 5, pageindex, sort, "Nome");
 
-            model.RouteValue = new RouteValueDictionary{{"filtro", filtro}};
+            model.RouteValue = new RouteValueDictionary { { "filtro", filtro } };
 
             return View(model);
         }
@@ -203,7 +203,7 @@ Imagemcurta)
                 _context.Itens.Remove(item);
             }
 
-              try
+            try
             {
                 _context.Itens.Remove(item);
                 await _context.SaveChangesAsync();
@@ -228,15 +228,20 @@ Imagemcurta)
             var filePath = Path.Combine(_hostingEnvireoment.WebRootPath,
 
             _confImg.NomePastaImagemItem);
+            if (!Directory.Exists(filePath))
+            {
+                Directory.CreateDirectory(filePath);
+            }
 
-            if (Imagem.FileName.Contains(".jpg") || Imagem.FileName.Contains(".gif")
+            var fileNameLower = Imagem.FileName.ToLower();
+            if (fileNameLower.Contains(".jpg") || fileNameLower.Contains(".jpeg") || fileNameLower.Contains(".gif")
 
-            || Imagem.FileName.Contains(".svg") || Imagem.FileName.Contains(".png"))
+            || fileNameLower.Contains(".svg") || fileNameLower.Contains(".png"))
 
             {
                 string novoNome =
 
-                $"{Guid.NewGuid()}.{Path.GetExtension(Imagem.FileName)}";
+                $"{Guid.NewGuid()}{Path.GetExtension(Imagem.FileName)}";
 
                 var fileNameWithPath = string.Concat(filePath, "\\", novoNome);
                 using (var stream = new FileStream(fileNameWithPath,

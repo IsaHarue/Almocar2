@@ -3,6 +3,15 @@ const rua = document.querySelector('#rua');
 const bairro = document.querySelector('#bairro');
 const cidade = document.querySelector('#cidade');
 const estado = document.querySelector('#estado');
+const erroCep = document.querySelector('#erroCep');
+const value = cep.value.replace(/\D/g, '');
+
+cep.addEventListener('input', () => {
+    cep.value = cep.value
+        .replace(/\D/g, '')      // remove tudo que não é número
+        .replace(/^(\d{5})(\d)/, '$1-$2') // adiciona o hífen
+        .slice(0, 9);            // limita a 9 caracteres (8 números + hífen)
+});
 
 cep.addEventListener('blur', e => {
     consultaCep();
@@ -29,7 +38,11 @@ async function consultaCep() {
 
         })
         .catch(e => {
-            alert("Cep Errado! ou Falha no Servidor!")
-        })
+            erroCep.textContent = "CEP não encontrado. Por favor, verifique o número e tente novamente.";
+            return;
+            erroCep.textContent = "";
+
+        }
+    )
 
 }

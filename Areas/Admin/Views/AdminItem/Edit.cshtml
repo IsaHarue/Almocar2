@@ -36,17 +36,17 @@
             <div class="form-group">
 
                 <label for="ImagemAtual">Imagem Atual</label>
-                <img src="@Model.ImagemUrl" alt="Imagem do Produto Atual" asp-append-version="true">
+                <img src="@Model.ImagemUrl" alt="Imagem do Produto Atual" class="img-fluid" asp-append-version="true">
                 <input type="hidden" name="ImagemUrl" value="@Model.ImagemUrl">
             </div>
             <div class="form-group">
                 <label for="Imagem">Nova Imagem:</label>
-                <input type="file" class="form-control" name="Imagem" id="Imagem">
+                <input type="file" class="form-control" name="Imagem" id="Imagem" accept="image/*">
             </div>
             <div class="form-group">
                 <label for="ImagemAtualc">Imagem Atual curta</label>
-                <img src="@Model.ImagemPequenaUrl" alt="Imagem do Produto Atual" asp-append-version="true">
-                <input type="hidden" name="ImagemPequena" value="@Model.ImagemPequenaUrl">
+                <img src="@Model.ImagemPequenaUrl" alt="Imagem do Produto Atual" class="img-fluid" asp-append-version="true">
+                <input type="hidden" name="ImagemPequenaUrl" value="@Model.ImagemPequenaUrl">
             </div>
 
                 <div class="form-group form-check">

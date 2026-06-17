@@ -2,7 +2,7 @@
 <div class="col-sm-12 col-md-12 col-lg-12 ">
 
     <div class="d-flex justify-content-start align-items-center w-100">
-        <p><img src="@Model.ImagemPequenaUrl" class=" " asp-append-version="true"></p>
+        <p><img src="@Model.ImagemPequenaUrl" class="img-fluid" asp-append-version="true"></p>
         <div class="row col-10 d-flex ms-3">
             <h4><a asp-controller="Item" asp-action="Details" class="link-dark"
                     asp-route-itemId="@Model.ItemId">@Model.Nome</a></h4>

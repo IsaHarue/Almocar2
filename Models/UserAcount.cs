@@ -10,6 +10,6 @@ namespace Almocar2.Models
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
-        public long Cep { get; set; }
+        public string Cep { get; set; }
     }
 }

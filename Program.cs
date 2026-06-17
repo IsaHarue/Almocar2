@@ -21,6 +21,17 @@ options.PageParameterName = "pageindex";
 builder.Services.AddScoped<RelatorioVendasServices>();
 builder.Services.Configure<ConfiguraImagem>(builder.Configuration.GetSection("ConfImagemItem"));
 builder.Services.AddScoped<IUserRoleInicial, UserRoleInicial>();
+
+// Configurar requisitos de senha
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = true;
+    options.Password.RequireLowercase = true;
+    options.Password.RequireUppercase = true;
+    options.Password.RequireNonAlphanumeric = true;
+    options.Password.RequiredLength = 8;
+});
+
 builder.Services.AddIdentity<UserAcount, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped(sp => Carrinho.GetCarrinhoCompra(sp));
 builder.Services.AddMemoryCache();
