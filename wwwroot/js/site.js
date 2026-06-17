@@ -6,6 +6,10 @@ const estado = document.querySelector('#estado');
 const erroCep = document.querySelector('#erroCep');
 const value = cep.value.replace(/\D/g, '');
 
+document.querySelector("form").addEventListener("submit", () => {
+    cep.value = cep.value.replace(/\D/g, '');
+});
+
 cep.addEventListener('input', () => {
     cep.value = cep.value
         .replace(/\D/g, '')      // remove tudo que não é número
@@ -26,6 +30,11 @@ async function consultaCep() {
     const value = cep.value;
 
     const url = `https://viacep.com.br/ws/${value}/json/`;
+
+    if (value.length !== 9) {
+    erroCep.textContent = "CEP inválido.";
+    return;
+}
 
     await fetch(url)
         .then(response => response.json())

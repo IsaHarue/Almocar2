@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Almocar2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d74dc59cc32da90939400833bdf9d6ee5e03f48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+574e77e49680a6ba772dbf6e25998b0ec0cc2aa4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Almocar2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Almocar2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
