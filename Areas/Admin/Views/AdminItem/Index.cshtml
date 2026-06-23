@@ -68,10 +68,10 @@ Total de Itens : @Model.TotalRecordCount
                 @Html.DisplayFor(modelItem => item.Preco)
             </td>
             <td>
-                <img src="@item.ImagemPequenaUrl" class="img-fluid" asp-append-version="true" />
+                <img src="@item.ImagemPequenaUrl" class="img-fluid" style="display:block; max-width:100px; max-height:100px; width:auto; height:auto; object-fit:contain;" asp-append-version="true" />
             </td>
             <td>
-                <img src="@item.ImagemUrl" class="img-fluid" asp-append-version="true" />
+                <img src="@item.ImagemUrl" class="img-fluid" style="display:block; max-width:100px; max-height:100px; width:auto; height:auto; object-fit:contain;" asp-append-version="true" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Ativo)

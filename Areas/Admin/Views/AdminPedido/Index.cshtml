@@ -3,6 +3,14 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+.table-container {
+  max-height: 60vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-container table { margin-bottom: 0; }
+</style>
 
 <h1>Index</h1>
 
@@ -18,6 +26,7 @@ Total de Pedidos : @Model.TotalRecordCount
 <p>
     <a asp-action="Create" class="link-danger">Criar novo</a>
 </p>
+<div class="table-container">
 <table class="table ">
     <thead >
         <tr>
@@ -110,3 +119,4 @@ Total de Pedidos : @Model.TotalRecordCount
         }
     </tbody>
 </table>
+</div>

@@ -31,7 +31,7 @@ async function consultaCep() {
 
     const url = `https://viacep.com.br/ws/${value}/json/`;
 
-    if (value.length !== 9) {
+    if (value.length !== 9  ) {
     erroCep.textContent = "CEP inválido.";
     return;
 }

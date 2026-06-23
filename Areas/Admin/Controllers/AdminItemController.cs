@@ -122,25 +122,45 @@ string sort = "Nome")
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ItemId,Nome,DescricaoCurta,DescricaoDetalhada,Preco,ImagemPequenaUrl,ImagemUrl,Ativo,Destaque,CategoriaId")] Item item, IFormFile Imagem, IFormFile
-Imagemcurta)
+        public async Task<IActionResult> Edit(int id, [Bind("ItemId,Nome,DescricaoCurta,DescricaoDetalhada,Preco,ImagemPequenaUrl,ImagemUrl,Ativo,Destaque,CategoriaId")] Item item, IFormFile Imagem, IFormFile Imagemcurta)
         {
             if (id != item.ItemId)
             {
                 return NotFound();
             }
 
+            var itemExistente = await _context.Itens.AsNoTracking().FirstOrDefaultAsync(i => i.ItemId == id);
+            if (itemExistente == null)
+            {
+                return NotFound();
+            }
+
             if (Imagem != null)
             {
-                Deletefile(item.ImagemUrl);
+                if (!string.IsNullOrEmpty(itemExistente.ImagemUrl))
+                {
+                    Deletefile(itemExistente.ImagemUrl);
+                }
                 string imagemr = await SalvarArquivo(Imagem);
                 item.ImagemUrl = imagemr;
             }
+            else
+            {
+                item.ImagemUrl = itemExistente.ImagemUrl;
+            }
+
             if (Imagemcurta != null)
             {
-                Deletefile(item.ImagemPequenaUrl);
+                if (!string.IsNullOrEmpty(itemExistente.ImagemPequenaUrl))
+                {
+                    Deletefile(itemExistente.ImagemPequenaUrl);
+                }
                 string imagemcr = await SalvarArquivo(Imagemcurta);
                 item.ImagemPequenaUrl = imagemcr;
+            }
+            else
+            {
+                item.ImagemPequenaUrl = itemExistente.ImagemPequenaUrl;
             }
 
             if (ModelState.IsValid)
